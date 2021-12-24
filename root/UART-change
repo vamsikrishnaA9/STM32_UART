@@ -1,0 +1,4 @@
+**UART init function changes
+UART1 function is not working
+properly adjusted the `USART1->` functions
+Now UART1,2,3 works fine
