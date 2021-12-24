@@ -14,19 +14,19 @@ void UART_init(unsigned short uart, unsigned long BR)
 		
 		if(uart == 1){
 		//enable UART2
-RCC->APB2ENR|= 0x4000;
-//Enable the related PINS
-init_gpio(PA,9,OP_50, O_AF_PP);
-init_gpio(PA,10,IN,I_PP);
+                    RCC->APB2ENR|= 0x4000;
+                      //Enable the related PINS
+                     init_gpio(PA,9,OP_50, O_AF_PP);
+                     init_gpio(PA,10,IN,I_PP);
 
 	//setup the buard rate
-	USART2->BRR = BRR_cal;
+	USART1->BRR = BRR_cal;
 	//enable UART2 transmit
-	USART2->CR1 |= 8;
+	USART1->CR1 |= 8;
 	//Enable UART2 recieve
-	USART2->CR1 |= 4;
+	USART1->CR1 |= 4;
 	//Enable UART2
-	USART2->CR1 |= 0x2000;		
+	USART1->CR1 |= 0x2000;		
 	}
 		else if(uart ==2){
 		RCC->APB1ENR|= 0x20000;
